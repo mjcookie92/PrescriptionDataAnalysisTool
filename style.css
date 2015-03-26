@@ -1,0 +1,238 @@
+@charset "utf-8";
+* {	
+	margin: 0px; padding: 0px;
+}
+.clear {
+	clear:both;}
+.clearleft {
+	display:block; 
+	clear:left;}
+.clearright{
+	display:block;
+	 clear:right;}
+.hide {
+	display:none;}
+a {
+	color:#FFFFFF;
+	
+}
+a:hover {
+	color:#DCF0F7;
+	text-decoration:none;
+}
+body {
+	background: #FFFFFF  url(images/bg.jpg) repeat-x;
+	}
+#wrap{
+	width:699px;
+	margin:0px auto 15px auto;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#666666;
+}
+
+#wrap2{
+	width:90%;
+	margin:0px auto 15px auto;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#666666;
+	 
+}
+/*Header*/
+
+#header{
+	height:242px;
+	background:url(images/header.jpg) no-repeat left top;
+	clear: both;
+}
+/*Header Menu*/
+#topmenu {
+	display:block;
+	list-style:none;
+	padding:0px 0px 0px 220px;
+	float: left;
+	width: 400px;
+	
+}
+
+#topmenu li {
+	display:inline;
+}
+#topmenu a {
+	display:block;
+	float:left; 
+	height:28px;
+	margin:0px 0px 0px0px;
+	text-decoration:none;
+	padding:5px 15px 0px 15px;
+	text-align:center;
+}
+#topmenu a, #topmenu a:visited, #topmenu a:active {
+	color:#FFFFFF;
+}
+#topmenu a:hover{
+	color:#ffffff;
+	background-color: #4b697e;
+}
+#topmenu .active a, #topmenu .active a:visited, #topmenu .active a:active{
+	color:#FFFFFF;
+	
+}
+
+#topmenu2 {
+	display:block;
+	list-style:none;
+	padding:0px 0px 0px 445px;
+	float: left;
+	width: 400px;
+	
+}
+#topmenu2 li {
+	display:inline;
+}
+#topmenu2 a {
+	display:block;
+	float:left; 
+	height:28px;
+	margin:0px 0px 0px0px;
+	text-decoration:none;
+	padding:5px 15px 0px 15px;
+	text-align:center;
+}
+#topmenu2 a, #topmenu a:visited, #topmenu a:active {
+	color:#FFFFFF;
+}
+#topmenu2 a:hover{
+	color:#ffffff;
+	background-color: #4b697e;
+}
+#topmenu2 .active a, #topmenu .active a:visited, #topmenu .active a:active{
+	color:#FFFFFF;
+	
+}
+
+/*Content*/
+#content {
+	background-color: #0C2C52;
+}
+
+
+#mainpage {
+	width:450px;
+	float:left;
+	padding:5px 5px 5px 130px;
+	height:550px
+}
+#mainpage p {
+	line-height:22px;
+	margin:10px 0px 22px 0px;
+	color: #5E9DC8;
+}
+#mainpage blockquote {
+	background:#efefef;
+	display:block; 
+	margin:5px;
+	font:Georgia, "Times New Roman", Times, serif; 
+	font-style:italic;}
+	
+#mainpage a {
+	color:#FFFFFF;
+}
+	
+h1{
+color:#FFFFFF;
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+}	
+	
+ h2, h3, h4, h5 {
+	color:#5E9DC8;
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+#mainpage h1 {
+	font-size:32px;
+	color: #F2F7F3;
+}
+#mainpage h2 {
+	font-size:18px;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #5E9DC8;
+}
+#mainpage h3 {
+	font-size:20px;
+	}
+#mainpage h4 {
+	font-size:18px;}
+#mainpage h5 {
+	font-size:16px;}
+.style_2 {
+	font-size: 7px;
+	color: #000011;
+	
+	}
+.style_2 a{
+	font-size: 7px;
+	color: #000011;
+	}
+.style_2 a:hover{
+	font-size: 7px;
+	color: #000011;
+	}
+#content #mainpage ol {
+	margin:10px 10px 10px 25px;}
+#content #mainpage ol li {
+	padding:5px 5px 5px 20px;}
+#content #mainpage ul li {
+	display:block; 
+	padding:0px; 
+	border-bottom: dashed 1px #D6E4A7;}
+
+/*footer*/
+#footer {
+	 
+	margin: auto;
+	width:685px;
+	height:75px;
+	padding:10px;
+	color:#FFFFFF;
+	text-align: center;
+	background:#5E9DC8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	clear: both;
+}
+
+#footer2 {
+	 
+	margin: auto;
+	width:900px;
+	height:75px;
+	padding:10px;
+	color:#FFFFFF;
+	text-align: center;
+	background:#5E9DC8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	clear: both;
+}
+#credit {font-size:10px; 
+	padding:3px;}
+#sitename a{
+	text-decoration :none;
+	font-size:24pxx;
+	color:#FFFFFF;
+	padding-top:20px;
+}
+#topbar{
+	height:80px;
+}
+
+#drugsearch{
+width:200px;
+}
+

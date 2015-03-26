@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Designed by MatthewCook</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+ <link href="dropdownstyle.css" rel="stylesheet" type="text/css" /> 
+<style type="text/css"><!-- /* style the auto-complete response */
+li.ui-menu-item 
+{font-size:10px;}
+--></style> 
+</head>
+
+<body>
+
+<script type="text/javascript" src="js/amcharts.js"></script>
+<script type="text/javascript" src="js/serial.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
+<script type="text/javascript" src="js/light.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/query1.js"></script>
+<script type="text/javascript" src="js/query2.js"></script>
+<script type="text/javascript" src="js/query3.js"></script> 
+<script type="text/javascript" src="js/cost1.js"></script>
+<script type="text/javascript" src="js/cost2.js"></script>
+<script type="text/javascript" src="js/cost3.js"></script>
+<script type="text/javascript" src="js/region1.js"></script>
+<script type="text/javascript" src="js/region2.js"></script>
+<script type="text/javascript" src="js/region3.js"></script>
+<script type="text/javascript" src="js/costRegion1.js"></script>
+<script type="text/javascript" src="js/costRegion2.js"></script>
+<script type="text/javascript" src="js/costRegion3.js"></script>
+<script type="text/javascript" src="js/compareJan.js"></script>
+<script type="text/javascript" src="js/compareFeb.js"></script>
+<script type="text/javascript" src="js/compareMar.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
+<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script> 
+<script type="text/javascript"> 
+ 
+		jQuery(document).ready(function(){
+			$('#drugsearch').autocomplete({source:'js/FindDrug.php', minLength:4});
+		});
+ 
+	</script>
+<script type="text/javascript" src="js/JanDrugSearch.js"></script>
+<script type="text/javascript" src="js/FebDrugSearch.js"></script>
+<script type="text/javascript" src="js/MarDrugSearch.js"></script>
+
+<script type="text/javascript"> 
+
+function clearBox(chartdiv)
+{
+    document.getElementById('chartdiv').innerHTML = "";
+}
+</script>
+
+
+
+<div class="style3"></div> 
+<div class="style_2">
+<span class="style3">
+<a href="index.html" title="Home"> </a></span></div><br>
+<div id="wrap2">
+<div id="topbar">
+  <h1 id="sitename"> Prescription Data Analysis Tool </h1>
+  
+  <div id="menus">
+  <ul id="topmenu2">
+  
+<li  class="active"><a href="index.html">Home</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="about.html">About The Data</a></li>
+</ul>
+</div>
+</div> 
+
+
+
+<h2>Select A Report</h2><br>
+<div id='container'>
+
+
+
+<div id="choosequery" style="width:50% height:400px;float:left;text-align:center;">
+<h3> Choose Your Query</h3><br>
+<p>The buttons below render reports showing the top 10 prescribed drugs by month<p> <br>
+<button onclick ="createchart1('chartdiv')">January</button>
+<button onclick ="createchart2('chartdiv')">February</button> 
+<button onclick ="createchart3('chartdiv')"> March </button> 
+<br>
+<br>
+<p>The buttons below render reports showing the top 10 most costly drugs by month<p> <br>
+        
+<button onclick ="createchart4('chartdiv')">January</button>
+<button onclick ="createchart5('chartdiv')">February</button>
+<button onclick ="createchart6('chartdiv')">March</button>
+<br>
+<br>
+<p>Choose a Town below to view the Top 10 Prescribed Drugs for that specific area <p><br>
+
+<select name="dropdown1" id="dropdown1" > 
+<optgroup label="Town">
+<option selected="St Albans">St Albans</option>
+<option value="Birmingham">Birmingham</option>
+<option value="Bath">Bath</option>
+<option value="Blackburn">Blackburn</option>
+<option value="Bradford">Bradford</option>
+<option value="Bournemouth">Bournemouth</option>
+<option value="Bolton">Bolton</option>
+<option value="Brighton">Brighton</option>
+<option value="Bromley">Bromley</option>
+<option value="Bristol">Bristol</option>
+<option value="Carlisle">Carlisle</option>
+<option value="Cambridge">Cambridge</option>
+<option value="Chester">Chester</option>
+<option value="Chelmsford">Chelmsford</option>
+<option value="Colchester">Colchester</option>
+<option value="Croydon">Croydon</option>
+<option value="Canterbury">Canterbury</option>
+<option value="Coventry">Coventry</option>
+<option value="Crewe">Crewe</option>
+<option value="Dartford">Dartford</option>
+<option value="Derby">Derby</option>
+<option value="Durham">Durham</option>
+<option value="Darlington">Darlington</option>
+<option value="Doncaster">Doncaster</option>
+<option value="Dorchester">Dorchester</option>
+<option value="Dudley">Dudley</option>
+<option value="East London">East London</option>
+<option value="Enfield">Enfield</option>
+<option value="London">London</option>
+<option value="Exeter">Exeter</option>
+<option value="Blackpool">Blackpool</option>
+<option value="Gloucester">Gloucester</option>
+<option value="Guildford">Guildford</option>
+<option value="Harrow">Harrow</option>
+<option value="Huddersfield">Huddersfield</option>
+<option value="Harrogate">Harrogate</option>
+<option value="Hemel Hempstead">Hemel Hempstead</option>
+<option value="Hereford">Hereford</option>
+<option value="Hull">Hull</option>
+<option value="Halifax">Halifax</option>
+<option value="Ilford">Ilford</option>
+<option value="Ipswich">Ipswich</option>
+<option value="Kingston-upon-Thames">Kingston-upon-Thames</option>
+<option value="Liverpool">Liverpool</option>
+<option value="Lancaster">Lancaster</option>
+<option value="Llandrindod Wells">Llandrindod Wells</option>
+<option value="Leicester">Leicester</option>
+<option value="Lincoln">Lincoln</option>
+<option value="Leeds">Leeds</option>
+<option value="Luton">Luton</option>
+<option value="Manchester">Manchester</option>
+<option value="Rochester">Rochester</option>
+<option value="North London">North London</option>
+<option value="Newcastle-upon-Tyne">Newcastle-upon-Tyne</option>
+<option value="Nottingham">Nottingham</option>
+<option value="Northampton">Northampton</option>
+<option value="Norwich">Norwich</option>
+<option value="North West London">North West London</option>
+<option value="Oldham">Oldham</option>
+<option value="Oxford">Oxford</option>
+<option value="Peterborough">Peterborough</option>
+<option value="Plymouth">Plymouth</option>
+<option value="Portsmouth">Portsmouth</option>
+<option value="Preston">Preston</option>
+<option value="Reading">Reading</option>
+<option value="Redhill">Redhill</option>
+<option value="Romford">Romford</option>
+<option value="Sheffield">Sheffield</option>
+<option value="South East London">South East London</option>
+<option value="Stevenage">Stevenage</option>
+<option value="Stockport">Stockport</option>
+<option value="Slough">Slough</option>
+<option value="Sutton">Sutton</option>
+<option value="Swindon">Swindon</option>
+<option value="Southampton">Southampton</option>
+<option value="SalisburyPlain">Salisbury Plain</option>
+<option value="Sunderland">Sunderland</option>
+<option value="Southend-on-Sea">Southend-on-Sea</option>
+<option value="Stoke-on-Trent">Stoke-on-Trent</option>
+<option value="South West London">South West London</option>
+<option value="Shrewsbury">Shrewsbury</option>
+<option value="Taunton">Taunton</option>
+<option value="Tweeddale">Tweeddale</option>
+<option value="Telford">Telford</option>
+<option value="Tonbridge">Tonbridge</option>
+<option value="Torquay">Torquay</option>
+<option value="Truro">Truro</option>
+<option value="Teesside">Teesside</option>
+<option value="Twickenham">Twickenham</option>
+<option value="Uxbridge">Uxbridge</option>
+<option value="West London">West London</option>
+<option value="Warrington">Warrington</option>
+<option value="Western Central London">Western Central London</option>
+<option value="Watford">Watford</option>
+<option value="Wakefield">Wakefield</option>
+<option value="Wigan">Wigan</option>
+<option value="Worcester">Worcester</option>
+<option value="Walsall">Walsall</option>
+<option value="Wolverhampton">Wolverhampton</option>
+<option value="York">York</option>
+</select>
+
+<button onclick ="createchart7('chartdiv')">January</button>
+<button onclick ="createchart8('chartdiv')">February</button>
+<button onclick ="createchart9('chartdiv')">March</button>
+<br> <br>
+
+<p>Choose a Town below to view the Top 10 Expensive Drugs for that specific area<p><br>
+
+<select name="dropdown2" id="dropdown2" > 
+<optgroup label="Town">
+<option selected="St Albans">St Albans</option>
+<option value="Birmingham">Birmingham</option>
+<option value="Bath">Bath</option>
+<option value="Blackburn">Blackburn</option>
+<option value="Blackpool">Blackpool</option>
+<option value="Bradford">Bradford</option>
+<option value="Bournemouth">Bournemouth</option>
+<option value="Bolton">Bolton</option>
+<option value="Brighton">Brighton</option>
+<option value="Bromley">Bromley</option>
+<option value="Bristol">Bristol</option>
+<option value="Carlisle">Carlisle</option>
+<option value="Cambridge">Cambridge</option>
+<option value="Chester">Chester</option>
+<option value="Chelmsford">Chelmsford</option>
+<option value="Colchester">Colchester</option>
+<option value="Croydon">Croydon</option>
+<option value="Canterbury">Canterbury</option>
+<option value="Coventry">Coventry</option>
+<option value="Crewe">Crewe</option>
+<option value="Dartford">Dartford</option>
+<option value="Derby">Derby</option>
+<option value="Durham">Durham</option>
+<option value="Darlington">Darlington</option>
+<option value="Doncaster">Doncaster</option>
+<option value="Dorchester">Dorchester</option>
+<option value="Dudley">Dudley</option>
+<option value="East London">East London</option>
+<option value="Enfield">Enfield</option>
+<option value="Exeter">Exeter</option>
+<option value="Gloucester">Gloucester</option>
+<option value="Guildford">Guildford</option>
+<option value="Harrow">Harrow</option>
+<option value="Huddersfield">Huddersfield</option>
+<option value="Harrogate">Harrogate</option>
+<option value="Hemel Hempstead">Hemel Hempstead</option>
+<option value="Hereford">Hereford</option>
+<option value="Hull">Hull</option>
+<option value="Halifax">Halifax</option>
+<option value="Ilford">Ilford</option>
+<option value="Ipswich">Ipswich</option>
+<option value="Kingston-upon-Thames">Kingston-upon-Thames</option>
+<option value="Liverpool">Liverpool</option>
+<option value="Lancaster">Lancaster</option>
+<option value="Llandrindod Wells">Llandrindod Wells</option>
+<option value="Leicester">Leicester</option>
+<option value="Lincoln">Lincoln</option>
+<option value="Leeds">Leeds</option>
+<option value="London">London</option>
+<option value="Luton">Luton</option>
+<option value="Manchester">Manchester</option>
+<option value="Rochester">Rochester</option>
+<option value="North London">North London</option>
+<option value="Newcastle-upon-Tyne">Newcastle-upon-Tyne</option>
+<option value="Nottingham">Nottingham</option>
+<option value="Northampton">Northampton</option>
+<option value="Norwich">Norwich</option>
+<option value="North West London">North West London</option>
+<option value="Oldham">Oldham</option>
+<option value="Oxford">Oxford</option>
+<option value="Peterborough">Peterborough</option>
+<option value="Plymouth">Plymouth</option>
+<option value="Portsmouth">Portsmouth</option>
+<option value="Preston">Preston</option>
+<option value="Reading">Reading</option>
+<option value="Redhill">Redhill</option>
+<option value="Romford">Romford</option>
+<option value="Sheffield">Sheffield</option>
+<option value="South East London">South East London</option>
+<option value="Stevenage">Stevenage</option>
+<option value="Stockport">Stockport</option>
+<option value="Slough">Slough</option>
+<option value="Sutton">Sutton</option>
+<option value="Swindon">Swindon</option>
+<option value="Southampton">Southampton</option>
+<option value="SalisburyPlain">Salisbury Plain</option>
+<option value="Sunderland">Sunderland</option>
+<option value="Southend-on-Sea">Southend-on-Sea</option>
+<option value="Stoke-on-Trent">Stoke-on-Trent</option>
+<option value="South West London">South West London</option>
+<option value="Shrewsbury">Shrewsbury</option>
+<option value="Taunton">Taunton</option>
+<option value="Tweeddale">Tweeddale</option>
+<option value="Telford">Telford</option>
+<option value="Tonbridge">Tonbridge</option>
+<option value="Torquay">Torquay</option>
+<option value="Truro">Truro</option>
+<option value="Teesside">Teesside</option>
+<option value="Twickenham">Twickenham</option>
+<option value="Uxbridge">Uxbridge</option>
+<option value="West London">West London</option>
+<option value="Warrington">Warrington</option>
+<option value="Western Central London">Western Central London</option>
+<option value="Watford">Watford</option>
+<option value="Wakefield">Wakefield</option>
+<option value="Wigan">Wigan</option>
+<option value="Worcester">Worcester</option>
+<option value="Walsall">Walsall</option>
+<option value="Wolverhampton">Wolverhampton</option>
+<option value="York">York</option>
+</select>
+<button onclick ="createchart10('chartdiv')">January</button>
+<button onclick ="createchart11('chartdiv')">February</button>
+<button onclick ="createchart12('chartdiv')">March</button>
+<br><br>
+<p> Comparison between Net Ingredient Cost & Actual Cost<p><br>
+<button onclick ="createchart13('chartdiv')">January</button>
+<button onclick ="createchart14('chartdiv')">February</button>
+<button onclick ="createchart15('chartdiv')">March</button>
+
+<br>
+<br>
+<p>Search for a specific Drug and view its popularity by region <p><br>
+<form> <!--onsubmit="return false;" --> 
+	Search:
+	<input id="drugsearch" type="text" /> 
+</form> <br>
+<button onclick ="createchart16('chartdiv')">January</button>
+<button onclick ="createchart17('chartdiv')">February</button>
+<button onclick ="createchart18('chartdiv')">March</button>
+
+<!-- <button onclick ="clearBox('chartdiv')">Clear</button> -->
+
+
+<br>
+<br>
+</div>
+
+<div id="chartdiv" style="border-left:solid #5E9DC8;padding:5px;width:50%; height:500px;float:right;">
+<div id='loading' style="display:none;padding:70px 0px 0px 200px;" >
+  <img src='images/loadinggraphic.gif'/> 
+</div>
+</div>
+
+
+<br>
+
+</div>
+</div>
+
+</div>
+<div id="footer2">
+<p>Copyright &copy; 2014 Prescription Data Analysis Tool| <a href="SiteMap.html">Sitemap</a></p>
+</div>
+</body>
+</html>
